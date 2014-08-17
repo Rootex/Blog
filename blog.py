@@ -67,7 +67,8 @@ def form_page():
 
 @app.route('/profile')
 def profile():
-    return render_template('profile.html')
+    name = "Sot"
+    return render_template('profile.html', name = name)
 
 
 def allowed_filename(filename):
