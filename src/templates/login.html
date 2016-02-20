@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="../static/style.CSS">
-    <title>Login</title>
-</head>
+{% extends "layout.html" %}
+{% block body %}
 <body>
-    <form method="post" action={{ url_for('login') }}>
+    <form method="post" action="{{ url_for('login') }}">
         <input name="user" type="text" size="25" value="Username"><br>
         <input name="passd" type="password" size="25" value="Password"><br>
         <input type="submit" value="Login">
     </form>
 </body>
-</html>
+{% endblock %}

@@ -1,6 +1,171 @@
-#h1 {
-    text-align: center;
-    color: blue;
+body { font-family: sans-serif; background: #eee; }
+img { display: block; margin-left: auto; margin-right: auto; width: 204px; height: 128px; align: center; }
+a, h1, h2 { color: #377ba8; }
+h1, h2 { font-family: 'Georgia', serif; margin: 0; }
+h1 { border-bottom: 2px solid #eee; }
+h2 { font-size: 1.2em; }
+em { text-align: right; }
+h3, h4 {
+    display: inline-block;
+    font-family: serif;
+	font-size: 20px;
+	color: #336699;
+	font-style: bold;
 }
 
-#para1{text-align: center}
+dl {
+    display: block;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    margin-left: 0;
+    margin-right: 0;
+}
+dt {
+display: table-caption;
+font-weight: 700;
+margin: 0;
+text-align: center;
+}
+
+dd {
+  width: 50%;
+  /* adjust the width; make sure the total of both is 100% */
+  background: #dd0
+  padding: 0;
+  margin: 0;
+  margin-bottom: 1em;
+}
+
+table {
+  border-collapse: collapse;
+  border: 1px solid lightblue;
+}
+td, th {
+  width: 100px;
+  height: 90px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+th {
+  background: lightblue;
+  border-color: white;
+}
+td {
+    background: #F8F8F8;
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+
+}
+
+.menu li {
+    float: left;
+}
+
+.menu li a {
+    display: inline-block;
+    color: #377ba8;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.menu li a:hover {
+    background-color: #111;
+}
+
+select {
+    width:150px;
+    border:1px solid white;
+    -webkit-border-top-right-radius: 15px;
+    -webkit-border-bottom-right-radius: 15px;
+    -moz-border-radius-topright: 15px;
+    -moz-border-radius-bottomright: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding:2px;
+}
+
+
+#submit{
+  background: #377ba8;
+  background-image: -webkit-linear-gradient(top, #377ba8, #377ba8);
+  background-image: -moz-linear-gradient(top, #377ba8, #377ba8);
+  background-image: -ms-linear-gradient(top, #377ba8, #377ba8);
+  background-image: -o-linear-gradient(top, #377ba8, #377ba8);
+  background-image: linear-gradient(to bottom, #377ba8, #377ba8);
+  -webkit-border-radius: 5;
+  -moz-border-radius: 5;
+  border-radius: 5px;
+  border: 1px solid #377ba8;
+  text-shadow: 0px 0px 0px #666666;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 6px 6px 6px 6px;
+  text-decoration: none;
+}
+#submit:hover {
+  background: #15498C;
+  background-image: -webkit-linear-gradient(top, #15498C, #15498C);
+  background-image: -moz-linear-gradient(top, #15498C, #15498C);
+  background-image: -ms-linear-gradient(top, #15498C, #15498C);
+  background-image: -o-linear-gradient(top, #15498C, #15498C);
+  background-image: linear-gradient(to bottom, #15498C, #15498C);
+  text-decoration: none;
+}
+
+#form {
+    background: white;
+    box-shadow: 5px 5px 5px #888888;
+    border: 3px solid white;
+    padding: 30px;
+    margin-bottom: 3em;
+}
+
+#form form {
+    width: 50%;
+    margin: 0px auto;
+    text-align: justify;
+}
+
+#form2 {
+    background: white;
+    box-shadow: 5px 5px 5px #888888;
+    border: 3px solid white;
+    margin-bottom: 3em;
+    padding: 30px;
+}
+
+.tb5 {
+    align: center;
+	border:2px solid #456879;
+	border-radius:10px;
+	height: 22px;
+	width: 230px;
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+
+.layout { margin: 2em auto;  border: 0px solid #ccc; padding: 0.8em; background: #EDEDED; }
+.page { margin: 5em auto; width: 35em; border: 0px solid #ccc; padding: 0.8em; background: #EDEDED;
+    display: inline-block; margin-left: 200px;}
+.header {position: fixed; width: 1250px; height: 70px; padding: 50px; background: #333333; top: 0px;
+    border: 1px solid #333333; border-radius: 2px;}
+.header img {display: block; height:80% !important; width:8% !important; float: left;}
+.header button {margin-top: 15px; float: right;}
+.menu {position: fixed; padding: 0.8em; margin-top: 8em; background: none; width: 1338px; height: 200px; display: inline-block;
+    float: left;}
+.posts {background: white; box-shadow: 5px 5px 5px #888888; border: 3px solid white; padding: 30px; margin-bottom: 3em;}
+
+.add-post { font-size: 0.9em; border-bottom: 1px solid #ccc }
+.add-post dl { font-weight: bold; }
+.metanav { text-align: right; font-size: 0.8em; padding: 0.3em; margin-bottom: 1em; background: #fafafa }
+.flash { background: #cee5F5; padding: 0.5em; border: 1px solid #aacbe2; }
+.error { background: #f0d6d6; padding: 0.5em; }
+.title { font-weight: bold; font-size: 3.5em; color: #377ba8}

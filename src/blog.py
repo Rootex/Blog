@@ -1,4 +1,4 @@
-from flask import Flask, url_for, request, render_template, redirect, send_from_directory
+from flask import Flask, url_for, request, render_template, redirect, send_from_directory, session
 from werkzeug.utils import secure_filename
 import os
 
@@ -11,19 +11,24 @@ app.config.from_object(__name__)
 
 app.config.update(dict(
     UPLOAD_FOLDER=UPLOAD_FOLDER,
-    DATABASE=os.path.join(app.root_path, 'lokal.db'),
+    DATABASE=os.path.join(app.root_path, 'blog.db'),
     DEBUG=True,
-    SECRET_KEY='Hackaton',
+    SECRET_KEY='default',
     USERNAME='admin',
     PASSWORD='default'
 ))
 
 app.config.from_envvar('PLOG_SETTINGS', silent=True)
 
+
 @app.route('/')
-@app.route('/<name>')
-def index(name=None):
-    return render_template('index.html', name=name)
+def home():
+    return redirect(url_for('index'))
+
+
+@app.route('/index')
+def index():
+    return render_template('index.html')
 
 
 @app.route('/test')
@@ -42,7 +47,7 @@ def show_all_posts():
     return 'All blog posts'
 
 
-@app.route('/login/form')
+@app.route('/log')
 def login_form():
     return render_template('login.html')
 
@@ -60,6 +65,7 @@ def login():
     else:
         msg = 'Error: Not POST'
         return error(msg)
+
 
 @app.route('/login/failed')
 def error(msg="error not defined"):

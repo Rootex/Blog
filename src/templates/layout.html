@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Lokal Shopper</title>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.CSS') }}">
+</head>
+
+<body>
+<div class="header">
+            <a href="{{url_for('index')}}">
+                <div class="logo">plaix</div>
+            </a>
+            {% if not session.logged_in %}
+            <a href="{{ url_for('login_form') }}"><button id="submit">Log in</button></a>
+            {% else %}
+            <a href=""><button id="submit">Log out</button></a></a>
+            {% endif %}
+</div>
+<div class="menu">
+            <ul>
+                <li><a class="active" href="{{url_for('index')}}">Home</a></li>
+                <li><a href="{{ url_for('show_all_posts') }}">Blog Posts</a></li>
+            </ul>
+</div>
+<div class="layout">
+
+
+
+        <div class="page">
+        <div>
+        {% for message in get_flashed_messages() %}
+            <div class="flash">{{ message }}</div>
+        {% endfor %}
+        </div>
+        {% block body%}{% endblock %}
+
+        <center>&copy Plaix Corp 2015</center>
+        </div>
+</div>
+</body>
+</html>
