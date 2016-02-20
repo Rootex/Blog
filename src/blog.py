@@ -7,7 +7,18 @@ UPLOAD_FOLDER = 'uploads'
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config.from_object(__name__)
+
+app.config.update(dict(
+    UPLOAD_FOLDER=UPLOAD_FOLDER,
+    DATABASE=os.path.join(app.root_path, 'lokal.db'),
+    DEBUG=True,
+    SECRET_KEY='Hackaton',
+    USERNAME='admin',
+    PASSWORD='default'
+))
+
+app.config.from_envvar('PLOG_SETTINGS', silent=True)
 
 @app.route('/')
 @app.route('/<name>')
@@ -92,7 +103,7 @@ def uploaded_file(filename):
 
 
 with app.test_request_context():
-    print url_for('index')
+    print(url_for('index'))
 
 if __name__ == "__main__":
     app.debug = True
