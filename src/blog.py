@@ -1,24 +1,13 @@
-from flask import Flask, url_for, request, render_template, redirect, send_from_directory, session
+from flask import url_for, request, render_template, redirect, send_from_directory, session
 from werkzeug.utils import secure_filename
 import os
+from src import app
 
 
-UPLOAD_FOLDER = 'uploads'
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
-app = Flask(__name__)
+
 app.config.from_object(__name__)
-
-app.config.update(dict(
-    UPLOAD_FOLDER=UPLOAD_FOLDER,
-    DATABASE=os.path.join(app.root_path, 'blog.db'),
-    DEBUG=True,
-    SECRET_KEY='default',
-    USERNAME='admin',
-    PASSWORD='default'
-))
-
-app.config.from_envvar('PLOG_SETTINGS', silent=True)
 
 
 @app.route('/')
