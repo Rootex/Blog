@@ -1,4 +1,4 @@
 Blog
 ====
 
-Blog project to practice Flask framework
+Hopefully i can ground myself to actually write my blog site
